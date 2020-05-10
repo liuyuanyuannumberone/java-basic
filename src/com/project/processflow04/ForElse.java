@@ -1,7 +1,11 @@
-package com.project.third;
+package com.project.processflow04;
 
-public class Demo05IfElsePractise {
+public class ForElse {
 	public static void main(String[] args) {
+		for (int i = 1; i <= 100; i++) {
+			System.out.println();
+		}
+
 		int score = 120;
 		if (score >= 90 && score <= 100) {
 			System.out.println("ÓÅÐã");
@@ -16,5 +20,8 @@ public class Demo05IfElsePractise {
 		} else {
 			System.out.println("Êý¾Ý´íÎó");
 		}
+
+
+
 	}
 }

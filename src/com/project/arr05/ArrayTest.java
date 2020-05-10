@@ -1,4 +1,4 @@
-package com.project.fourth;
+package com.project.arr05;
 
 public class ArrayTest {
     public static void main(String[] args) {
@@ -9,9 +9,7 @@ public class ArrayTest {
          * */
         System.out.println(arr);//[I@58ceff1  申请到的内存空间
         System.out.println(arr[0]);//0
-        /*
-            数组静态初始化
-         * */
+
         int[] a = new int[]{1, 2, 3};
         int[] b = {1, 2, 3}; //数组
         System.out.println(a[2]);
