@@ -1,4 +1,4 @@
-package com.project.operator02;
+package com.basic;
 
 /*
 算数运算符号：
@@ -19,17 +19,12 @@ package com.project.operator02;
 
 /*
 四则运算当中的加号“+”有常见的三种用法：
-
 1. 对于数值来说，那就是加法。
 2. 对于字符char类型来说，在计算之前，char会被提升成为int，然后再计算。
 3. 对于字符串加号代表字符串连接操作。任何数据类型和字符串进行连接的时候，结果都会变成字符串
-
 */
 
-/*
-赋值运算符
 
-* */
 
 /*
 比较运算符：
@@ -42,6 +37,7 @@ package com.project.operator02;
 如果进行多次判断，不能连着写。数学当中的写法，例如：1 < x < 3
 */
 
+
 /*
 逻辑运算符
 
@@ -51,60 +47,23 @@ package com.project.operator02;
 
 与“&&”，或“||”，具有短路效果：如果根据左边已经可以判断得到最终结果，那么右边的代码将不再执行，从而节省一定的性能。
 
-注意事项：
-逻辑运算符只能用于boolean值。
-两个条件：条件A && 条件B
-多个条件：条件A && 条件B && 条件C
 */
+
 
 /*
 * 三元运算符
 * int i = (1==2 ? 100 : 200);
 * */
 
-
-public class OperateChar {
+public class D02_Operate {
     public static void main(String[] args) {
-
         int x = 10;
-        // int + double --> double + double --> double
         double result3 = x + 2.5;
-        System.out.println(result3); // 12.5
-
-
         String str2 = "Java";
-        // String + int --> String
-        System.out.println(str2 + 20); // Java20
-
-
         int x1 = 10;
         int y1 = 20;
-        int result4 = ++x1 + y1--;
-        System.out.println(result3); // 31
-        System.out.println(x1); // 11
-        System.out.println(y1); // 19
-
-        {
-            int num1 = 10;
-            int num2 = 12;
-            System.out.println(num1 < num2); // true
-            System.out.println(num2 >= 100); // false
-            System.out.println(num2 <= 100); // true
-            System.out.println(10 == 10); // true
-            System.out.println(20 != 25); // true
-        }
-        {
-
-            System.out.println(true && false); // false
-            System.out.println(true || false); // true
-            System.out.println(!true); // false
-
-
-            int a = 10;
-            System.out.println(3 > 4 && ++a < 100); // false
-            System.out.println(a); // 10
-        }
-
+        int num1 = 10;
+        System.out.println(num1 >= 100); // false
 
     }
 }

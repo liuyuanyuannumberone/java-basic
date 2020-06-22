@@ -1,6 +1,6 @@
-package com.project.arr05;
+package com.basic;
 
-public class ArrayTest {
+public class D04_Array {
     public static void main(String[] args) {
         int[] arr = new int[6];
         /*   数组动态初始化
@@ -9,7 +9,6 @@ public class ArrayTest {
          * */
         System.out.println(arr);//[I@58ceff1  申请到的内存空间
         System.out.println(arr[0]);//0
-
         int[] a = new int[]{1, 2, 3};
         int[] b = {1, 2, 3}; //数组
         System.out.println(a[2]);
