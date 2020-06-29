@@ -16,7 +16,6 @@ public class D04_Array {
         arrayErgodic();
         arrayReverse();
     }
-
     //Êı×é±éÀú
     private static void arrayErgodic() {
         int[] array = {10, 20, 30, 40, 50};

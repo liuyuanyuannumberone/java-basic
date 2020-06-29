@@ -17,6 +17,7 @@ public class D06_ObjectOriented {
         stu.sleep("±ù±ù");
         stu.setAge(19);
         System.out.println(stu.getAge());
+        D07_Student stu2 = new D07_Student("lyy", "ÄÐ");
+        stu2.print();
     }
-
 }
