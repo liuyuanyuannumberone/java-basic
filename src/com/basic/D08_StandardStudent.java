@@ -17,6 +17,24 @@ public class D08_StandardStudent {
     private String name;
     private String gender;
     private int age;
+    static String room = "841-401";
+
+
+    public static String printRoom() {
+//        System.out.println(this.name); 静态的东西,只能使用静态的东西,
+//        不能使用非静态的东西(静态当中,不能使用非静态
+//        静态的内容,随着类的加载而加载并完成初始化
+//        静态的方法,由类名直接调用,此时没有对象,而非静态的内容,属于对象,既然没有对象, 静态方法中不能使用非静态
+
+        /*
+        * 静态方法不能直接访问普通成员变量或成员方法,这是属于对象的。
+          反之，成员方法可以直接访问静态变量或静态方法。
+        * */
+
+        return D08_StandardStudent.room; //静态变量只和类有关，与对象无关
+
+
+    }
 
     public String getName() {
         return name;
