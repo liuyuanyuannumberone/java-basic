@@ -19,21 +19,30 @@ public class D08_StandardStudent {
     private int age;
     static String room = "841-401";
 
+    static {
+        //静态代码块，优先于静态方法执行，优先于构造方法执行，也就是new的时候，他先执行。
+        System.out.println("静态代码块被执行了");
+    }
 
     public static String printRoom() {
-//        System.out.println(this.name); 静态的东西,只能使用静态的东西,
-//        不能使用非静态的东西(静态当中,不能使用非静态
-//        静态的内容,随着类的加载而加载并完成初始化
-//        静态的方法,由类名直接调用,此时没有对象,而非静态的内容,属于对象,既然没有对象, 静态方法中不能使用非静态
-
+//      System.out.println(this.name); 静态的东西,只能使用静态的东西,
+        return D08_StandardStudent.room; //静态变量只和类有关，与对象无关
         /*
-        * 静态方法不能直接访问普通成员变量或成员方法,这是属于对象的。
-          反之，成员方法可以直接访问静态变量或静态方法。
+        作用: 被static修饰的内容,被该类的所有对象共享使用,依赖于类,和具体的对象无关,在内存中唯一只有一份。
+        静态的内容,随着类的加载而加载并完成初始化,此时没有对象. 静态的方法,由类名直接调用
+        静态方法不能直接访问普通成员变量或成员方法,这是属于对象的。 反之，成员方法可以直接访问静态变量或静态方法。
         * */
 
-        return D08_StandardStudent.room; //静态变量只和类有关，与对象无关
+        /*
+         类名称.静态成员变量
+         类名称.静态成员方法
+         但是在同一个类中，不需要写类名。直接使用
+         */
+    }
 
-
+    public static void printAll() {
+        System.out.println("printRoom  " + printRoom());
+        System.out.println("room  " + room);
     }
 
     public String getName() {
@@ -60,7 +69,7 @@ public class D08_StandardStudent {
         this.age = age;
     }
 
-
+    //构造方法
     public D08_StandardStudent() {
     }
 

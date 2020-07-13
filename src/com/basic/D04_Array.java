@@ -15,7 +15,9 @@ public class D04_Array {
         System.out.println(a.length);
         arrayErgodic();
         arrayReverse();
+        staticArrayMethod();
     }
+
     //数组遍历
     private static void arrayErgodic() {
         int[] array = {10, 20, 30, 40, 50};
@@ -53,5 +55,12 @@ public class D04_Array {
 //        }
     }
 
+    /*
+    数组类，里边全是静态方法，由类名直接调用
+    * */
+    private static void staticArrayMethod() {
+            int[] a={1,2,3,4,5};
+
+    }
 
 }
