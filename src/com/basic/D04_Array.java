@@ -4,6 +4,7 @@ package com.basic;
 //空指针异常 java.lang.NullPointerException  int[] a=null;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class D04_Array {
     public static void main(String[] args) {
@@ -59,8 +60,16 @@ public class D04_Array {
     数组类，里边全是静态方法，由类名直接调用
     * */
     private static void staticArrayMethod() {
-            int[] a={1,2,3,4,5};
+        int[] array = {100, 90, 80, 50, 70, 60};
+        System.out.println(Arrays.toString(array));  //数组变成字符串 [100, 90, 80, 50, 70, 60]
+        Arrays.sort(array);
+        System.out.println(Arrays.toString(array));  //[50, 60, 70, 80, 90, 100]
 
+        String str = "liuyuanyuan";
+        char[] chs = str.toCharArray(); //[l, i, u, y, u, a, n, y, u, a, n]
+        Arrays.sort(chs); //[a, a, i, l, n, n, u, u, u, y, y]
+        System.out.println(Arrays.toString(chs));
     }
+
 
 }
