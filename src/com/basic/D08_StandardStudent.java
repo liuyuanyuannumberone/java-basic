@@ -11,6 +11,10 @@ package com.basic;
         满参:（赋值）
             alt + insert --> Constructor --> shift + ↓(选定多个属性) --> ok
    3. 方法中使用成员变量时，一律使用this关键字，区分成员变量和局部变量同名
+   *
+   *
+   * ctrl + o  方法重写
+   * ctrl+ i   必须要重写的抽象方法和接口中用
 * */
 
 public class D08_StandardStudent {

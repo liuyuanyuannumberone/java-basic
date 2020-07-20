@@ -40,12 +40,9 @@ public class D04_ArrayList {
 //        list.clear();
 
         System.out.println(len);//2
-//        System.out.println(ele);//java
         System.out.println(list); //[hello, java],虽然是引用类型，但是内部已经 toString()
         System.out.println(one); //java
         System.out.println(listEmpty); //false
-
-        System.out.println("=================================");
 
         //遍历
         for (int i = 0; i < list.size(); i++) {
@@ -68,7 +65,6 @@ public class D04_ArrayList {
 *
 * */
     private static void ArrayList2() {
-        //ArrayList<int> list=new ArrayList<int>(); //error
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
