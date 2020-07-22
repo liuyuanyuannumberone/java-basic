@@ -6,9 +6,9 @@ import java.util.Scanner;    //alt+enter 导包
 
 public class D09_Api {
     public static void main(String[] args) {
-        random();
+//        random();
         scanner();
-        math();
+//        math();
     }
 
     private static void random() {
@@ -19,10 +19,9 @@ public class D09_Api {
     }
 
     private static void scanner() {
-        //读取用户输入数据
         Scanner sc = new Scanner(System.in);
-//        System.out.println("请输入数字：");
-//        System.out.println("您输入的数字是：" + sc.nextInt());
+        System.out.println("请输入数字：");
+        System.out.println("您输入的数字是：" + sc.nextInt());
     }
 
 

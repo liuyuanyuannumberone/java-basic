@@ -5,7 +5,7 @@ public class D03_Son extends D02_Parent {
     //父类private的方法，子类无法继承，不存在覆盖重写
     // java只支持单继承 ，不支持 A extends B,C,
     //支持多层继承 B extend A   C extends B。
-    //默认最初的类继承了Object          public class D02_Parent extends Object
+    //默认最初的类继承了Object          public class D02_Parent extends ObjectDemo
 
     String name = "lyy";
 

@@ -8,15 +8,19 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "age=" + age +
-                '}';
+            "age=" + age +
+            '}';
     }
-
 
     @Override
-    public int hashCode() {
-        return Objects.hash(age);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age;
     }
+
+
 
     public Person(int age) {
         this.age = age;
