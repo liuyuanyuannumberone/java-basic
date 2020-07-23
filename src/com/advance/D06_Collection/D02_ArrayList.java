@@ -1,8 +1,10 @@
-package com.basic;
+package com.advance.D06_Collection;
+
+import com.basic.D08_StandardStudent;
 
 import java.util.ArrayList;
 
-public class D04_ArrayList {
+public class D02_ArrayList {
     public static void main(String[] args) {
         ArrayList(new ArrayList<>());
     }
