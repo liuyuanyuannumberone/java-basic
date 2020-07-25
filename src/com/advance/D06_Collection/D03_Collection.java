@@ -2,10 +2,54 @@ package com.advance.D06_Collection;
 
 import java.util.*;
 
+class Childern implements Comparable {
+  int age;
+
+  @Override
+  public int compareTo(Object o) {
+    Childern ch = (Childern) o;
+    int n = this.age - ch.age;
+    return n;
+  }
+
+  public Childern(int age) {
+    this.age = age;
+  }
+
+  @Override
+  public String toString() {
+    return "Childern{" +
+        "age=" + age +
+        '}';
+  }
+}
+
+class Adlut {
+  int age;
+
+  public Adlut(int age) {
+    this.age = age;
+  }
+
+  @Override
+  public String toString() {
+    return "Adlut{" +
+        "age=" + age +
+        '}';
+  }
+}
+
+class MyCp implements Comparator<Adlut> {
+  @Override
+  public int compare(Adlut o1, Adlut o2) {
+    return o1.age - o2.age;
+  }
+}
+
 public class D03_Collection {
   public static void main(String[] args) {
     //java中提供了大量的集合类，管理大量的对象。不同的集合类采用不同的数据结构存储对象
-    // 对集合元素增删改查效率不同
+    //对集合元素增删改查效率不同
 
     // 集合类：
     // ArrayList  LinkedList   父 List(接口) ：有序通过索引访问   可以重复相同元素
@@ -17,12 +61,13 @@ public class D03_Collection {
 
     /*
     常见的数据结构：
-    数组：ArrayList（单线程 效率高） Vector（线程安全 效率低）
-    链表： LinkedList
-    哈希表： HashSet HashMap
-    树：  TreeSet TreeMap
+    数组：ArrayList（单线程 效率高） Vector（线程安全 效率低）  -------查询快
+    链表： LinkedList                            ---- 增删快
+    哈希表： HashSet HashMap    增删查都快，性能取决于生成哈希值
+    树：  TreeSet TreeMap     二叉树  查找快
     栈： 后进先出
     队列： 先进先出
+
     * */
 
     //增删查（遍历）
@@ -54,6 +99,46 @@ public class D03_Collection {
     list.clear();//清空集合
     list.isEmpty(); //集合是否为空
 
+    collectionToolsClass();
+  }
 
+  //Collection工具类
+
+  public static void collectionToolsClass() {
+    //shuffle  打乱集合元素的顺序
+    //sort  对List集合元素排序   .sort(List<? extends Comparable>  list)
+    // List<自定义对象> 必须重写Comparable 接口 并且compareTo方法 根据返回值的正负进行升序或者降序排列
+    List<Integer> list = new ArrayList<>();
+    list.add(10);
+    list.add(90);
+    list.add(70);
+    list.add(100);
+    Collections.sort(list);
+    System.out.println(list);//[10, 70, 90, 100]
+
+    List<Childern> ch = new ArrayList<>();
+    ch.add(new Childern(10));
+    ch.add(new Childern(30));
+    ch.add(new Childern(20));
+    Collections.sort(ch);
+    System.out.println(ch);
+
+
+    //.sort(List<?> list,Comparator cp)  如果list集合元素没有实现Comparable，传入一个比较器
+    List<Adlut> ad = new ArrayList<>();
+    ad.add(new Adlut(10));
+    ad.add(new Adlut(30));
+    ad.add(new Adlut(20));
+    //第一种
+    Collections.sort(ad, new MyCp());
+    // 第二种   匿名内部类
+    Collections.sort(ad, new Comparator<Adlut>() {
+      @Override
+      public int compare(Adlut o1, Adlut o2) {
+        return o1.age - o2.age;
+      }
+    });
+
+    System.out.println(ad);
   }
 }

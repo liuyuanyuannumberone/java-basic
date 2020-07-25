@@ -23,8 +23,5 @@ public class Demo {
             }
         };
         b.fly();
-
-
-
     }
 }
