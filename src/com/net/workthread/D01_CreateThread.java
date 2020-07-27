@@ -46,6 +46,7 @@ public class D01_CreateThread {
     });
     t4.start();
 
+   //创建线程的方式3   ！！！！！！！！！！！！！！！！！！！
 
 
     //主线程会继续向下执行
