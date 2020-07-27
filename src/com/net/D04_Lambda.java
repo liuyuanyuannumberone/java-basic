@@ -41,6 +41,7 @@ public class D04_Lambda {
     });
   }
 
+
   public static void test(Animal s) {
     s.eat();
   }
