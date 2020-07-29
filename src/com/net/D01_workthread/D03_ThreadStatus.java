@@ -1,4 +1,4 @@
-package com.net.workthread;
+package com.net.D01_workthread;
 
 public class D03_ThreadStatus {
   public static void main(String[] args) throws InterruptedException {

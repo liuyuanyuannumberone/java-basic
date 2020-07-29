@@ -58,6 +58,7 @@ public class D01_Map {
     for (String key : strSet) {
       System.out.println(key + ":" + map.get(key));
     }
+    Collection<String> values = map.values();
 
     //获取Map中所有的键值对象的集合 存储到Set集合中  public Set<Map.Entry<K,V> entrySet();>
     Set<Map.Entry<String, String>> entrySet = map.entrySet();

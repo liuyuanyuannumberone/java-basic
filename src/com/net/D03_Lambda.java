@@ -12,10 +12,12 @@ public class D03_Lambda {
         }
       }
     });
+    /*
+    lambda表达式前提条件：
+    1.函数式接口:接口中有且只有一个抽象方法(还可以包含 Object类中方法声明一样的/静态方法/默认方法)
+    2.相当于传递一个子类对象或者接口类对象（包含抽象方法的重写）（多态）   （父类/接口 对象名）
+     */
 
-    //等价于上边  lambda表达式
-    //前提条件： 必须是一个接口 ，
-    //接口中有且只有一个抽象方法(还可以包含和Object类中方法声明一样的)抽象方法 ---函数式接口
     fun(() -> {
       for (int i = 0; i < 100; i++) {
         System.out.println(i);
@@ -25,7 +27,6 @@ public class D03_Lambda {
     //第三种
     Runnable runnable = getRun();
     fun(runnable);
-
   }
 
   public static void fun(Runnable runnable) {  //函数式接口
