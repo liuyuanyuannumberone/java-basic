@@ -2,10 +2,12 @@ package com.net.D07_StreamFlow;
 
 import com.basic.D18_DuoTai.Interface;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -22,6 +24,8 @@ public class D01_Stream {
     list.add("张三");
     filterTest(list);
     MapTest();
+    concatTest(list);
+    streamTransferCollection(list);
   }
 
   //Collection获取流
@@ -53,6 +57,13 @@ public class D01_Stream {
     Stream<Integer> s1 = Stream.of(1, 2, 3, 54, 6, 7);
   }
 
+  //stream 流转换为集合,数组
+  public static void streamTransferCollection(List<String> list) {
+    Stream<String> stream = list.stream();
+    List<String> list1 = stream.collect(Collectors.toList()); //转换为list集合
+    Set<String> set = stream.collect(Collectors.toSet());   //转换为set集合
+    Object[] arr = stream.toArray();//转换为数组
+  }
 
   //forEach  ---理解匿名内部类、lambda表达式、方法引用的例子   挺好的
   public static void forEachTest(List<String> list) {
@@ -70,6 +81,7 @@ public class D01_Stream {
 
     list.stream().forEach(System.out::println);
   }
+
   //filter---count--limit--skip
   public static void filterTest(List<String> list) {
     list.stream().filter(new Predicate<String>() {
@@ -87,7 +99,8 @@ public class D01_Stream {
     System.out.println("-");
 
   }
-   //map
+
+  //map
   public static void MapTest() {
     List<String> list = new ArrayList<>();
     list.add("18");
@@ -104,5 +117,28 @@ public class D01_Stream {
       return Integer.valueOf(s);
     }).forEach(s -> System.out.println(s + 1));
   }
+
+  //concat 合并流
+  public static void concatTest(List<String> list) {
+    List<Integer> list2 = new ArrayList<>();
+    list2.add(1);
+    list2.add(6);
+    list2.add(2);
+
+    List<String> list3 = new ArrayList<>();
+    list3.add("111");
+    list3.add("222");
+    list3.add("1333");
+
+    System.out.println("-----------------");
+
+    Stream<? extends Serializable> concatStream = Stream.concat(list.stream(), list2.stream());
+    Stream<String> stringStream = Stream.concat(list.stream(), list3.stream());
+    concatStream.forEach(System.out::println);
+    stringStream.forEach(System.out::println);
+
+
+  }
+
 }
 
