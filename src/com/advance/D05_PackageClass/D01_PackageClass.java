@@ -6,7 +6,8 @@ public class D01_PackageClass {
     //作用：本类型工具的方法
 
     //String 转换为基本类型   基本类型转换为String
-    System.out.println(Integer.parseInt("24"));
+    System.out.println(Integer.parseInt("24")+1);
+    System.out.println(Integer.valueOf("24")+1);
     System.out.println(Double.parseDouble("24.12"));
 
     String str = 10 + "";
