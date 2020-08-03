@@ -40,7 +40,7 @@ public class D06_BufferStream {
   public static void charBufferStream(String bashPath) {
     try (
         BufferedReader buffIn = new BufferedReader(new FileReader(bashPath + "ww.txt"));
-        BufferedWriter buffOut = new BufferedWriter(new FileWriter(bashPath + "aa.txt"));
+        BufferedWriter buffOut = new BufferedWriter(new FileWriter(bashPath + "client.txt"));
     ) {
       int n = 0;
       /*

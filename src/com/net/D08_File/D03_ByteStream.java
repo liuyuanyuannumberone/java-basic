@@ -84,7 +84,6 @@ public class D03_ByteStream {
     System.out.println(charArr);
     */
 
-
     //一次读取多个字节,读多次
     int t = 0;
     byte[] byteArray = new byte[3];
