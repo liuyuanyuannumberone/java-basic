@@ -23,14 +23,14 @@ public class D05_Properties {
     //∂¡»°
     try (FileReader in = new FileReader(bashPath)) {
       pro.load(in);
+      Set<String> stringSet = pro.stringPropertyNames();
+      for (String key : stringSet) {
+        System.out.println(key + "=" + pro.getProperty(key));
+      }
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
-    }
-    Set<String> stringSet = pro.stringPropertyNames();
-    for (String key : stringSet) {
-      System.out.println(key + "=" + pro.getProperty(key));
     }
   }
 }
