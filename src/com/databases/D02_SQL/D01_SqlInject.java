@@ -18,7 +18,7 @@ public class D01_SqlInject {
     con.close();
     */
 
-    //解决办法：ps内部转义避免了sql注入问题,w完全代替Statement
+    //解决办法：ps内部转义避免了sql注入问题,完全代替Statement
     String name = "lyy";
     String passwd = "passok";
     Connection con = MysqlUtils.getConnection();

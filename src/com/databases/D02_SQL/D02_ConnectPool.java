@@ -115,7 +115,8 @@ public class D02_ConnectPool {
       connection5 = myPool.getConnection();
       connection6 = myPool.getConnection();
       connection7 = myPool.getConnection();
-    } finally {
+    }
+    finally {
       connection1.close();
       connection2.close();
       connection3.close();
