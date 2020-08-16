@@ -25,6 +25,7 @@ public class D08_StandardStudent {
 
     static {
         //静态代码块，优先于静态方法执行，优先于构造方法执行，也就是new的时候，他先执行。
+        //他只执行一次
         System.out.println("静态代码块被执行了");
     }
 
