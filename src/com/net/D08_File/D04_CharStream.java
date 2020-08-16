@@ -4,9 +4,9 @@ import java.io.*;
 
 public class D04_CharStream {
   /*
-  ×Ö·ûÁ÷£º×Ö·û²Ù×÷  Ò»¸ö×Ö·û²»Ò»¶¨¼¸¸ö×Ö½Ú£¬¿ÉÒÔ±£Ö¤ÍêÕûµÄ²Ù×÷Ò»¸ö×Ö·û¡£Ö»ÄÜ²Ù×÷´¿ÎÄ±¾ÎÄ¼ş
-   Writer-->OutputStreamWriter(×ª»»Á÷)--->×ÓÀàFileWriter
-   Reader-->InputStreamWriter(×ª»»Á÷)---->FileReader
+  å­—ç¬¦æµï¼šå­—ç¬¦æ“ä½œ  ä¸€ä¸ªå­—ç¬¦ä¸ä¸€å®šå‡ ä¸ªå­—èŠ‚ï¼Œå¯ä»¥ä¿è¯å®Œæ•´çš„æ“ä½œä¸€ä¸ªå­—ç¬¦ã€‚åªèƒ½æ“ä½œçº¯æ–‡æœ¬æ–‡ä»¶
+   Writer-->OutputStreamWriter(è½¬æ¢æµ)--->å­ç±»FileWriter
+   Reader-->InputStreamWriter(è½¬æ¢æµ)---->FileReader
 
    */
   public static void main(String[] args) throws IOException {
@@ -17,20 +17,20 @@ public class D04_CharStream {
 
   public static void out(String bashPath) throws IOException {
     /*
-    ×Ö·ûÁ÷writeÊä³ö£¬²»ÊÇÖ±½ÓÊä³ö£¬¶øÊÇÏÈÊä³öµ½»º´æÇø£¬ĞèÒªË¢ĞÂ»º´æ£¬µ±»º´æÂúÊ±£¬×Ô¼º»á×Ô¶¯Ë¢ĞÂ»º´æ
+    å­—ç¬¦æµwriteè¾“å‡ºï¼Œä¸æ˜¯ç›´æ¥è¾“å‡ºï¼Œè€Œæ˜¯å…ˆè¾“å‡ºåˆ°ç¼“å­˜åŒºï¼Œéœ€è¦åˆ·æ–°ç¼“å­˜ï¼Œå½“ç¼“å­˜æ»¡æ—¶ï¼Œè‡ªå·±ä¼šè‡ªåŠ¨åˆ·æ–°ç¼“å­˜
      */
     Writer out = new FileWriter(bashPath);
 
-    out.write(99); //Êä³öÒ»¸ö×Ö·û
+    out.write(99); //è¾“å‡ºä¸€ä¸ªå­—ç¬¦
 
-    char[] ch = {'a', 'b', 'Áõ'};
-    out.write(ch);  //Êä³öÒ»¸ö×Ö·ûÊı×é
+    char[] ch = {'a', 'b', 'åˆ˜'};
+    out.write(ch);  //è¾“å‡ºä¸€ä¸ªå­—ç¬¦æ•°ç»„
     out.write(ch, 2, 1);
 
-    out.write("ÎÒÖÕÓÚ¿ÉÒÔÊä³ö×Ö·û´®ÁË");  //Êä³öÒ»¸ö×Ö·û´®
-    out.write("ÎÒ°®java", 2, 4);
+    out.write("æˆ‘ç»ˆäºå¯ä»¥è¾“å‡ºå­—ç¬¦ä¸²äº†");  //è¾“å‡ºä¸€ä¸ªå­—ç¬¦ä¸²
+    out.write("æˆ‘çˆ±java", 2, 4);
 
-    out.flush();//Ë¢ĞÂ»º´æ
+    out.flush();//åˆ·æ–°ç¼“å­˜
     out.close();  //flush+close
   }
 
@@ -38,14 +38,14 @@ public class D04_CharStream {
     Reader in = new FileReader(bashPath);
     int c = 0;
 
-    //Ò»´Î¶ÁÈ¡Ò»¸ö×Ö·û
+    //ä¸€æ¬¡è¯»å–ä¸€ä¸ªå­—ç¬¦
     /*
     while ((c = in.read()) != -1) {
       System.out.print((char) c);
     }
     */
 
-    //Ò»´Î¶ÁÈ¡¶à¸ö×Ö·û
+    //ä¸€æ¬¡è¯»å–å¤šä¸ªå­—ç¬¦
     char[] chArr = new char[2];
     while ((c = in.read(chArr)) != -1) {
       String str = new String(chArr, 0, c);
@@ -55,7 +55,7 @@ public class D04_CharStream {
   }
 
 
-  //JDK7ÒÔºó IOÒì³£µÄ´¦Àí,»á×Ô¶¯¹Ø±Õclose¡£  £»ºó±ßalt+enter  £¬È»ºóÔÙalt+enter¿ì½İ¼ü
+  //JDK7ä»¥å IOå¼‚å¸¸çš„å¤„ç†,ä¼šè‡ªåŠ¨å…³é—­closeã€‚  ï¼›åè¾¹alt+enter  ï¼Œç„¶åå†alt+enterå¿«æ·é”®
   public static void exception() {
     try (
         FileWriter out = new FileWriter("src/com/net/D08_File/file/ww.txt");
