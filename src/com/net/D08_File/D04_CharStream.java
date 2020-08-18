@@ -23,7 +23,7 @@ public class D04_CharStream {
 
     out.write(99); //输出一个字符
 
-    char[] ch = {'a', 'b', '刘'};
+    char[] ch = {'a', 'b', '1'};
     out.write(ch);  //输出一个字符数组
     out.write(ch, 2, 1);
 
