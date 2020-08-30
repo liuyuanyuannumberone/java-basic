@@ -11,11 +11,11 @@ public class D01_Array {
     int[] arr = new int[6];
     int[] a = new int[]{1, 2, 3};
     int[] b = {1, 2, 3};
-    System.out.println(a); //[I@58ceff1 数组名称代表数组在内存空间的地址值
-    System.out.println(a[0]);
-    System.out.println(a.length);
-    arrayErgodic();
-    arrayReverse();
+//    System.out.println(a); //[I@58ceff1 数组名称代表数组在内存空间的地址值
+//    System.out.println(a[0]);
+//    System.out.println(a.length);
+//    arrayErgodic();
+//    arrayReverse();
     staticArrayMethod();
   }
 
@@ -67,6 +67,4 @@ public class D01_Array {
     Arrays.sort(chs); //[a, a, i, l, n, n, u, u, u, y, y]
     System.out.println(Arrays.toString(chs));
   }
-
-
 }
